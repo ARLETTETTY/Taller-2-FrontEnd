@@ -7,12 +7,15 @@ import 'primeicons/primeicons.css';
 import './index.scss';
 
 import { BrowserRouter } from 'react-router-dom';
+import PokemonProvider from "./providers/PokemonProvider";
 
 
 import App from './App';
 
 createRoot(document.getElementById('root')).render(
+<PokemonProvider>
   <BrowserRouter>
     <App />
   </BrowserRouter>
+</PokemonProvider>
 );
