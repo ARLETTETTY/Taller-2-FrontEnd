@@ -2,26 +2,35 @@ import { Carousel } from 'primereact/carousel';
 
 function PokemonCarousel({ pokemons }) {
   const itemTemplate = (pokemon) => (
-    <div style={{ textAlign: "center" }}>
-      <img src={pokemon.sprite} alt={pokemon.name} width={96} />
-      <h4>{pokemon.name}</h4>
-      <div>ID: {pokemon.id}</div>
-      <div style={{ marginTop: 8 }}>
-        {pokemon.types.map(type => (
-          <img
-            key={type.name}
-            src={type.icon}
-            alt={type.name}
-            title={type.name}
-            style={{ width: 64, margin: "0 4px" }}
-          />
+    <div className="pokemon-card">
+      <img src={pokemon.sprite} alt={pokemon.name} className="pokemon-card__image" />
+      <h4 className="pokemon-card__name">{pokemon.name}</h4>
+      <div className="pokemon-card__id">ID: {pokemon.id}</div>
+      <div className="pokemon-card__types">
+        {pokemon.types.map((type) => (
+          <span key={type.name} className="pokemon-type">
+            {type.icon && (
+              <img
+                src={type.icon}
+                alt={type.name}
+                title={type.name}
+              />
+            )}
+          </span>
         ))}
       </div>
     </div>
   );
 
   return (
-    <Carousel value={pokemons} itemTemplate={itemTemplate} numVisible={3} numScroll={1} />
+    <Carousel
+      value={pokemons}
+      itemTemplate={itemTemplate}
+      numVisible={1}
+      numScroll={1}
+      circular
+      className="pokemon-carousel"
+    />
   );
 }
 

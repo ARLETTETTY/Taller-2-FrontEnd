@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navbar from '../components/navbar';
 import { PokemonContext } from '../providers/context';
 import PokemonCarousel from '../components/Carousel';
-import { InputNumber } from "primereact/inputnumber"; // O InputText si prefieres
+import { InputNumber } from "primereact/inputnumber";
 import { Button } from "primereact/button";
 
 function PokemonView() {
@@ -10,23 +9,36 @@ function PokemonView() {
   const [limit, setLimit] = useState(10);
 
   useEffect(() => {
-    cargarPokemons(limit); // carga inicial con el valor por defecto
-  }, []);
+    cargarPokemons(limit);
+  }, []); 
 
-  const handleRecargar = () => cargarPokemons(limit);
+  const handleMostrar = () => cargarPokemons(limit);
 
   return (
     <>
-      <Navbar />
-      <h2>Estos son los Pokémons disponibles</h2>
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem", margin: "1rem 0" }}>
-        <InputNumber value={limit} onValueChange={(e) => setLimit(e.value)} min={1} max={1100} />
-        <Button label="Recargar Pokémons" icon="pi pi-refresh" onClick={handleRecargar} />
-      </div>
+      <div className="pokemon-page">
 
-      {loading && <div>Cargando...</div>}
-      {error && <div>Error: {error.message}</div>}
-      {!loading && !error && <PokemonCarousel pokemons={pokemons} />}
+        <h2 className="title-pokemon">Pokémon disponibles</h2>
+
+        <div className="pokemon-controls">
+          <InputNumber
+            value={limit}
+            onValueChange={(e) => setLimit(e.value)}
+            min={1}
+            max={1100}
+            inputClassName="pokemon-input"
+          />
+          <Button
+            label="Mostrar Pokémon"
+            onClick={handleMostrar}
+            className="pokemon-button"
+          />
+        </div>
+
+        {loading && <div>Cargando...</div>}
+        {error && <div>Error: {error.message}</div>}
+        {!loading && !error && <PokemonCarousel pokemons={pokemons} />}
+      </div>
     </>
   );
 }

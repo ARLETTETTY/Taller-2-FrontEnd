@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import Home from './pages/home';
-import PokemonView from './pages/PokemonView';
+import HomeContainer from "./containers/HomeContainer";
+import ImplementacionContainer from "./containers/ImplementacionContainer";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="pokemons" element={<PokemonView />} />
+      <Route path="/" element={<HomeContainer />} />
+      <Route path="/implementacion" element={<ImplementacionContainer />} />
+      <Route path="/pokemons" element={<ImplementacionContainer />} />
     </Routes>
   );
 }

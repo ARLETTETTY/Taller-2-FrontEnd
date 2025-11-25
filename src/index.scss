@@ -1,0 +1,176 @@
+/* Contenedor principal */
+.main-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+/* Fondo general */
+body {
+  background-color: #dbcfbf6a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* NAVBAR */
+.app-navbar {
+  padding: 1rem 3rem;
+  background: linear-gradient(90deg, #ff1b1b, #ff9f1a);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.app-navbar .p-menubar-root-list {
+  display: none;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 780;
+  font-size: 2.2rem;
+  letter-spacing: 0.03em;
+  color: #1b1b1b;  
+}
+
+.navbar-logo img {
+  width: 45px;
+  height: 45px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #1b1b1b;   
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.navbar-link:hover {
+  color: #ffffff;
+}
+
+/* Tarjeta Pokémon */
+.pokemon-carousel {
+  margin-top: 2rem;
+}
+
+.pokemon-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pokemon-card__image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.pokemon-card__name {
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.pokemon-card__id {
+  color: #777;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.pokemon-card__types {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.pokemon-type img {
+  width: 100px;
+  height: 32px;
+}
+
+/* Página Pokémon */
+.pokemon-page {
+  text-align: center;
+}
+
+.pokemon-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.pokemon-input {
+  width: 120px;
+  border-radius: 12px;
+}
+
+.pokemon-button.p-button {
+  background-color: #ffcb05;
+  border: none;
+  color: #1b1b1b;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.pokemon-button.p-button:hover {
+  background-color: #f5b000;
+}
+
+/* HOME */
+.home-page {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.home-box {
+  max-width: 900px;
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e2e2;
+}
+
+.home-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  font-weight: 800;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-authors {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.home-authors span {
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.home-box p {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}

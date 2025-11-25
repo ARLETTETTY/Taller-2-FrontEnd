@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PokemonContext } from "./context"; // Asegúrate de crear y exportar el contexto de Pokémon
+import { PokemonContext } from "./context"; 
 import { getPokemons } from "../services/pokeapiService";
 
 function PokemonProvider({ children }) {
