@@ -12,10 +12,10 @@ RUN npm run build
 # Etapa 2: servir estáticos con Nginx
 FROM nginx:1.27-alpine
 
-# Elimina config por defecto y copia la tuya si quieres
+# Opcional: tu propia config de Nginx
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copia el build de Vite/React
+# Copia el build de React/Vite
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 80
